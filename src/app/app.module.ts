@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import  { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,6 +12,7 @@ import { CarritoComprasComponent } from './components/carrito-compras/carrito-co
 import { CatalogoComponent } from './components/catalogo/catalogo.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { CrearProductoComponent } from './components/crear-producto/crear-producto.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,13 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     CarritoComprasComponent,
     CatalogoComponent,
     DashboardComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    CrearProductoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
