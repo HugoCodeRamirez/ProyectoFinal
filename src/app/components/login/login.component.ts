@@ -1,16 +1,40 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Contacto } from 'src/app/models/contacto';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+    usuarioForm: FormGroup;
+    reyexCorreo = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i
+    reyexNumero = /^[0-9]+$/;
 
-  constructor() { }
+    constructor(private fb: FormBuilder) {
+        this.usuarioForm = this.fb.group({
+            correo: ['', [Validators.required, Validators.pattern(this.reyexCorreo)]],
+            nombres: ['',[Validators.required]],
+            apellidos: ['',[Validators.required]],
+            contraseña: ['',Validators.required],
+            edad: ['',[Validators.required, Validators.pattern(this.reyexNumero)]]
 
-  ngOnInit(): void {
-  }
+        })
+    }
+
+    ngOnInit(): void {
+    }
+
+    guardarUsuario(){
+        const contactoUsuario: Contacto = {
+            correo: this.usuarioForm.get('correo')?.value,
+            nombres: this.usuarioForm.get('nombres')?.value,
+            apellidos: this.usuarioForm.get('apellidos')?.value,
+            contraseña: this.usuarioForm.get('contraseña')?.value,
+            edad: this.usuarioForm.get('edad')?.value
+        }
+        console.log(contactoUsuario)
+    }
 
 }
- 
