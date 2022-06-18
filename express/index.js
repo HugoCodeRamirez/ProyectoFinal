@@ -1,1 +1,7 @@
-const express=require('express');
+
+
+
+
+
+
+app.use('/api/contacto',require('./routes/contactoRutas'))
