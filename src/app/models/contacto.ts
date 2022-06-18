@@ -3,14 +3,14 @@ export class Contacto{
     correo: string;
     nombres: string;
     apellidos: string;
-    contraseña: string;
+    contrasena: string;
     edad: number;
 
-constructor(correo: string, nombres: string, apellidos: string, contraseña: string, edad: number){
+constructor(correo: string, nombres: string, apellidos: string, contrasena: string, edad: number){
     this.correo = correo
     this.nombres = nombres
     this.apellidos = apellidos
-    this.contraseña = contraseña
+    this.contrasena = contrasena
     this.edad = edad
 }
 
