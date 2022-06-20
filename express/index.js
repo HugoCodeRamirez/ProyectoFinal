@@ -1,6 +1,6 @@
 const express=require('express');
-const app=express();
 const conectarDB=require('./config/db')
+const app=express();
 
 conectarDB();
 app.use(express.json());
