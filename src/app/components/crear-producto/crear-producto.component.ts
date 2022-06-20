@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Form, FormBuilder, FormGroup } from '@angular/forms';
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-crear-producto',
@@ -10,9 +10,14 @@ export class CrearProductoComponent implements OnInit {
 
   productoForm: FormGroup;
 
+  regexNumero = /^[0-9]+$/;
+  regexLetra = /^[a-zA-Z\s]+$/;
+
   constructor(private fb: FormBuilder) {
     this.productoForm = this.fb.group({
-
+      producto: ['', [Validators.required]],
+      marca: ['', [Validators.required]],
+      precio: ['', [Validators.required]],
     })
   }
 
@@ -20,7 +25,8 @@ export class CrearProductoComponent implements OnInit {
   }
 
   agregarProducto(){
-    console.log(this.productoForm)
+    console.log(this.productoForm);
+    console.log(this.productoForm.get('producto')?.value)
   }
 
 }
