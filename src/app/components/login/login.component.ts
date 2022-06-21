@@ -15,11 +15,8 @@ export class LoginComponent implements OnInit {
     reyexCorreo = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i
     reyexNumero = /^[0-9]+$/;
     regexLetra = /^[a-zA-Z\s]+$/;
-<<<<<<< HEAD
-=======
     id: string | null;
     titulo_registro = 'Regitrarse'
->>>>>>> ricardo
 
     constructor(private fb: FormBuilder, private _contactoService: ContactoService, private router: Router, private idRoute: ActivatedRoute) {
         this.usuarioForm = this.fb.group({
