@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router();
 const contactoController = require('../controllers/contactoControllers')
 
+
 router.post('/crear-contacto', contactoController.crearContacto)
 router.get('/obtener-lista-contactos', contactoController.obtenerContactos)
 router.get('/obtener-contacto', contactoController.obtenerContacto)
