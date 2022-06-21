@@ -1,6 +1,6 @@
-const mongoose=require('mongoose');
+const mongoose = require('mongoose');
 
-const ProductoSchema=mongoose.Schema({
+const ProductoSchema = mongoose.Schema({
     categoria:{
         type:String,
         required:true
@@ -22,4 +22,4 @@ const ProductoSchema=mongoose.Schema({
         default:Date.now()
     }
 })
-module.exports=mongoose.model('Producto',ProductoSchema)
+module.exports = mongoose.model('Producto',ProductoSchema);

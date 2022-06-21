@@ -11,8 +11,8 @@ import { LoginComponent } from './components/login/login.component';
 import { CarritoComprasComponent } from './components/carrito-compras/carrito-compras.component';
 import { CatalogoComponent } from './components/catalogo/catalogo.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
 import { CrearProductoComponent } from './components/crear-producto/crear-producto.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
