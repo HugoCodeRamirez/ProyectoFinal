@@ -9,13 +9,12 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const routes: Routes = [
 
-{path: '/', component: HomeComponent},
+{path: '', component: HomeComponent},
 {path: 'carro-de-compras', component: CarritoComprasComponent},
 {path: 'catalogo', component: CatalogoComponent},
 {path: 'login', component: LoginComponent},
 {path: 'formproducto', component: CrearProductoComponent},
 {path: '404', component: NotFoundComponent},
-
 {path: '**', redirectTo: '404', pathMatch: 'full'}
 
 ];
