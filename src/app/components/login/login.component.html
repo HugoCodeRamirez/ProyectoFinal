@@ -1,7 +1,7 @@
 <section class="container">
     
     <div class="row mb-5">
-        <div class="col-5 border border-dark contenido1 me-5 ">
+        <div class="col-5 border border-dark contenido1 me-5 mt-3">
             <h3 class="mt-3">Inicio de sesión</h3>
             <p>Si ya eres nuestro cliente, por favor inicia tu sesión aquí.</p>
             <form>
@@ -16,8 +16,8 @@
                 <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
             </form>
         </div>
-        <div class="col-6 border border-dark contenido2 ">
-            <h3 class="mt-3">Registrarse</h3>
+        <div class="col-6 border border-dark contenido2 mt-3 ">
+            <h3 class="mt-3">{{ titulo_registro }}</h3>
             <p>Para registrarse, por favor llena tu información aquí.</p>
             <form [formGroup]="usuarioForm" (ngSubmit)="guardarUsuario()" class="">
                 <div class="col-8">
