@@ -13,6 +13,11 @@ import { CatalogoComponent } from './components/catalogo/catalogo.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { CrearProductoComponent } from './components/crear-producto/crear-producto.component';
+import { HttpClientModule } from '@angular/common/http';
+import { TelevisorComponent } from './components/televisor/televisor.component';
+import { ComputadoresComponent } from './components/computadores/computadores.component';
+import { ConsolasComponent } from './components/consolas/consolas.component';
+import { CamarasComponent } from './components/camaras/camaras.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +30,17 @@ import { CrearProductoComponent } from './components/crear-producto/crear-produc
     CatalogoComponent,
     DashboardComponent,
     NotFoundComponent,
-    CrearProductoComponent
+    CrearProductoComponent,
+    TelevisorComponent,
+    ComputadoresComponent,
+    ConsolasComponent,
+    CamarasComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
