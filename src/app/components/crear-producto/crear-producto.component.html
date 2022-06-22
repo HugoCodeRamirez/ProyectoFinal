@@ -1,9 +1,12 @@
 <div class="container">
     <div>
+        <h1 class="pointer" [routerLink]="['/televisor']">TELEVISOR</h1>
+    </div>
+    <div >
         <h1>Crear Producto</h1>
     </div>
 
-    <form [formGroup]="productoForm" (ngSubmit)="agregarProducto">
+    <form [formGroup]="productoForm" (ngSubmit)="agregarProducto()">
         <select class="form-select" aria-label="Default select example">
             <option selected>Seleccione Categoria</option>
             <option value="1">Celulares</option>
@@ -14,16 +17,25 @@
         </select>
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Nombre Producto</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese nombre producto">
+            <input formControlName="producto" type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese nombre producto">
+            <span *ngIf="productoForm.get('producto')?.hasError('required') && productoForm.get('producto')?.touched" class="text-danger ps-1 fw-bold">El nombre del producto es obligatorio</span>
         </div>
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Marca</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese marca">
+            <input formControlName="marca" type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese marca">
+            <span *ngIf="productoForm.get('marca')?.hasError('required') && productoForm.get('marca')?.touched" class="text-danger ps-1 fw-bold">La marca es obligatoria</span>
         </div>
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Precio</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Precio producto">
+            <input formControlName="precio" type="email" class="form-control" id="exampleFormControlInput1" placeholder="Precio producto">
+            <span *ngIf="productoForm.get('precio')?.hasError('required') && productoForm.get('precio')?.touched" class="text-danger ps-1 fw-bold">El precio es obligatorio</span>
+
         </div>
-        <input class="btn btn-primary" type="submit" value="Submit">
+        <button class="btn btn-success" type="submit" [disabled]="productoForm.invalid">Guardar</button>
     </form>
 </div>
+
+<ng-template #prueba>
+    <h1>hola mundo</h1>
+</ng-template>
+<div (change)="somethingChanged()"></div>
