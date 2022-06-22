@@ -1,5 +1,8 @@
 <div class="container">
     <div>
+        <h1 class="pointer" [routerLink]="['/televisor']">TELEVISOR</h1>
+    </div>
+    <div >
         <h1>Crear Producto</h1>
     </div>
 
@@ -31,3 +34,8 @@
         <button class="btn btn-success" type="submit" [disabled]="productoForm.invalid">Guardar</button>
     </form>
 </div>
+
+<ng-template #prueba>
+    <h1>hola mundo</h1>
+</ng-template>
+<div (change)="somethingChanged()"></div>
