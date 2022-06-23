@@ -1,4 +1,3 @@
-
 // Creamos el servidor
 const express=require('express');
 const conectarDB=require('./config/db');
@@ -10,8 +9,7 @@ conectarDB();
 app.use(cors());
 app.use(express.json());
 
-
-app.use('/api',require('./routes/proyectoRutas'))
+app.use('/api', require('./routes/proyectoRutas'))
 
 app.listen(4000,()=>{
     console.log('servidor en la parte superior')
