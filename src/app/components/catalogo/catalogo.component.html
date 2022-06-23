@@ -52,12 +52,12 @@
                 </div>
             </div>
         </div>
-
-            <div class="col-12 col-md-3 col-lg-3">
-                <div class="card">
+        <div *ngIf="listProductos.length > 0" class="listandoProductos col-12 col-md-3 col-lg-3">
+            <div >
+                <div *ngFor="let producto of listProductos" class="card">
                     <img src="assets/img/iphone1.jpg" class="img" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">{{ producto.marca }}</h5>
                         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
                             additional content. This content is a little bit longer.</p>
                     </div>
@@ -253,6 +253,7 @@
                     </div>
                 </div>
             </div>
-
+            <h2 class="text-center text-danger fw-bold" *ngIf="listProductos.length == 0" >No hay productos registrados en BD</h2>
+        </div>
     </div>
 </section>
