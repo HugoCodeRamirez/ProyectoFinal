@@ -1,7 +1,9 @@
 const express=require('express');
 const router =express.Router();
 const productoController=require('../controllers/productoController');
-const contactoController = require('../controllers/contactoControllers')
+const contactoController = require('../controllers/contactoControllers');
+const computadorController = require('../controllers/computadoresControllers');
+const camarasController = require('../controllers/consolasControllers');
 
 router.post('/producto/crearProducto',productoController.crearProductos);
 router.get('/producto/obtenerProductos',productoController.obtenerProductos);
@@ -14,5 +16,23 @@ router.get('/contacto/obtener-lista-contactos', contactoController.obtenerContac
 router.get('/contacto/obtener-contacto', contactoController.obtenerContacto)
 router.put('/contacto/actualizar-contacto/:id', contactoController.actualizarContacto)
 router.delete('/contacto/borrar-contacto/:id', contactoController.borrarContacto)
+
+router.post('/computador/', computadorController.crearComputadores)
+router.get('/computador/obtenerComputadores', computadorController.obtenerContactos)
+router.get('/computador/obtener_producto', computadorController.obtener_computador)
+router.put('/computador/actualizarComputador/:id', computadorController.actualizarComputador)
+router.delete('/computador/borrarComputador/:id', computadorController.borrarComputador)
+
+router.post('/camaras/', camarasController.crearCamaras)
+router.get('/camaras/obtenerCamaras', camarasController.obtenerCamaras)
+router.get('/camaras/obtener_camaras', camarasController.obtener_camaras)
+router.put('/camaras/actualizarCamaras/:id', camarasController.actualizarCamaras)
+router.delete('/camaras/borrarCamaras/:id', camarasController.borrarCamaras)
+
+router.post('/consolas/', consolasController.crearConsolas)
+router.get('/consolas/obtenerConsolas', consolasController.obtenerConsolas)
+router.get('/consolas/obtener_consolas', consolasController.obtener_consolas)
+router.put('/consolas/actualizarConsolas/:id', consolasController.actualizarConsolas)
+router.delete('/consolas/borrarConsolas/:id', consolasController.borrarConsolas)
 
 module.exports=router;

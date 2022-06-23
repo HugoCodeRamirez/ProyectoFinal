@@ -33,7 +33,6 @@
             <label for="exampleFormControlInput1" class="form-label">Precio</label>
             <input formControlName="precio" type="number" class="form-control" id="exampleFormControlInput1" placeholder="Precio producto">
             <span *ngIf="productoForm.get('precio')?.hasError('required') && productoForm.get('precio')?.touched" class="text-danger ps-1 fw-bold">El precio es obligatorio</span>
-
         </div>
         <button class="btn btn-success" type="submit" [disabled]="productoForm.invalid">Guardar</button>
     </form>

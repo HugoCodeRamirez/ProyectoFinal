@@ -22,4 +22,4 @@ const ConsolasSchema = mongoose.Schema({
         default:Date.now()
     }
 })
-module.exports = mongoose.model('Consolas',ProductoSchema);
+module.exports = mongoose.model('Consolas',ConsolasSchema);

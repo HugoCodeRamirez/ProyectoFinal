@@ -22,4 +22,4 @@ const CelularesSchema = mongoose.Schema({
         default:Date.now()
     }
 })
-module.exports = mongoose.model('Celulares',ProductoSchema);
+module.exports = mongoose.model('Celulares',CelularesSchema);
