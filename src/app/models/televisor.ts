@@ -12,4 +12,5 @@ constructor (marca: string, tamanopantalla: string, tipopantalla: string, precio
     this.precio = precio
 }
 
+
 }
