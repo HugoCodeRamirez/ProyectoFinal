@@ -1,19 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 
-
 @Component({
   selector: 'app-crear-producto',
   templateUrl: './crear-producto.component.html',
-  styleUrls: ['./crear-producto.component.css']
+  styleUrls: ['./crear-producto.component.css'],
 })
-
-
 export class CrearProductoComponent implements OnInit {
-
-
-
-
   productoForm: FormGroup;
 
   regexNumero = /^[0-9]+$/;
@@ -24,20 +17,29 @@ export class CrearProductoComponent implements OnInit {
       marca: ['', [Validators.required]],
       memoria: ['', [Validators.required]],
       ram: ['', [Validators.required]],
-      precio: ['', [Validators.required]]
-    })
+      precio: ['', [Validators.required]],
+    });
+
+    this.productoForm = this.fb.group({
+      marca: ['', [Validators.required]],
+      tamanopantalla: ['', [Validators.required]],
+      tipodepantalla: ['', [Validators.required]],
+      precio: ['', [Validators.required]],
+    });
+
+    this.productoForm = this.fb.group({
+      marca: ['', [Validators.required]],
+      tipodecontroles: ['', [Validators.required]],
+      controlesincluidos: ['', [Validators.required]],
+      precio: ['', [Validators.required]],
+    });
   }
 
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
-
-  agregarProducto(){
+  agregarProducto() {
     console.log(this.productoForm);
-    console.log(this.productoForm.get('producto')?.value)
+    console.log(this.productoForm.get('producto')?.value);
   }
-  somethingChanged(){
-    
-  }
-  
+  somethingChanged() {}
 }
