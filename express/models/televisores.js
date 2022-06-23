@@ -5,7 +5,7 @@ const TelevisoresSchema = mongoose.Schema({
         type:String,
         required:true
     },
-    tamañopantalla:{
+    tamanopantalla:{
         type:String,
         required:true
     },
@@ -22,4 +22,4 @@ const TelevisoresSchema = mongoose.Schema({
         default:Date.now()
     }
 })
-module.exports = mongoose.model('Televisores',ProductoSchema);
+module.exports = mongoose.model('Televisores', TelevisoresSchema);

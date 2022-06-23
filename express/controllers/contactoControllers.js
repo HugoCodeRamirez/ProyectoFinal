@@ -49,7 +49,7 @@ exports.actualizarContacto = async (req, res) => {
         contacto.contrasena = contrasena
         contacto.edad = edad
 
-        let procesoUpdate = await contacto.findOneAndUpdate({_id: req.params.id}, contacto, {new: true})
+        let procesoUpdate = await Contacto.findOneAndUpdate({_id: req.params.id}, contacto, {new: true})
         res.json(procesoUpdate)
 
     }catch (error) {
