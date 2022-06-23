@@ -10,10 +10,10 @@ conectarDB();
 app.use(cors());
 app.use(express.json());
 
-app.use('/api/contacto',require('./routes/contactoRutas'))
-app.use('/api/productos',require('./routes/producto'))
 
-app.listen(4000, () => {
+app.use('/api',require('./routes/proyectoRutas'))
+
+app.listen(4000,()=>{
     console.log('servidor en la parte superior')
 })
 

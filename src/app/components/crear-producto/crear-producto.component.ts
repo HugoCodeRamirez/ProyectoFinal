@@ -7,7 +7,12 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
   templateUrl: './crear-producto.component.html',
   styleUrls: ['./crear-producto.component.css']
 })
+
+
 export class CrearProductoComponent implements OnInit {
+
+
+
 
   productoForm: FormGroup;
 
@@ -23,6 +28,7 @@ export class CrearProductoComponent implements OnInit {
     })
   }
 
+
   ngOnInit(): void {
   }
 
@@ -30,5 +36,8 @@ export class CrearProductoComponent implements OnInit {
     console.log(this.productoForm);
     console.log(this.productoForm.get('producto')?.value)
   }
-
+  somethingChanged(){
+    
+  }
+  
 }
