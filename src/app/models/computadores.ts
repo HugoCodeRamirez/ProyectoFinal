@@ -1,15 +1,15 @@
-export class Producto{
+export class Computadores{
     _id?:number;
     marca:string;
-    memoriainterna:string;
     memoriaram:string;
+    discosolido:string;
     precio:number;
 
-    constructor(marca:string,memoriainterna:string,memoriaram:string,precio:number)
+    constructor(marca:string,memoriaram:string,discosolido:string,precio:number)
     {
         this.marca=marca;
-        this.memoriainterna=memoriainterna;
         this.memoriaram=memoriaram;
+        this.discosolido=discosolido;
         this.precio=precio;
     }
 }

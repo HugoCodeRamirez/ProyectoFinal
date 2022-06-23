@@ -22,4 +22,4 @@ const ComputadoresSchema = mongoose.Schema({
         default:Date.now()
     }
 })
-module.exports = mongoose.model('Computadores',ProductoSchema);
+module.exports = mongoose.model('Computadores',ComputadoresSchema);

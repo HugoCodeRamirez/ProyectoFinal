@@ -1,15 +1,15 @@
-const mongoose=require('mongoose');
+const mongoose = require('mongoose');
 
-const ProductoSchema=mongoose.Schema({
-    categoria:{
-        type:String,
-        required:true
-    },
-    nombreProducto:{
-        type:String,
-        required:true
-    },
+const ProductoSchema = mongoose.Schema({
     marca:{
+        type:String,
+        required:true
+    },
+    memoriainterna:{
+        type:String,
+        required:true
+    },
+    memoriaram:{
         type:String,
         required:true
     },
@@ -22,4 +22,4 @@ const ProductoSchema=mongoose.Schema({
         default:Date.now()
     }
 })
-module.exports=mongoose.model('Producto',ProductoSchema)
+module.exports = mongoose.model('Producto',ProductoSchema);
