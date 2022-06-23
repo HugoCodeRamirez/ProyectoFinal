@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const CelularesSchema = mongoose.Schema({
+const ProductoSchema = mongoose.Schema({
     marca:{
         type:String,
         required:true
@@ -22,4 +22,4 @@ const CelularesSchema = mongoose.Schema({
         default:Date.now()
     }
 })
-module.exports = mongoose.model('Celulares',CelularesSchema);
+module.exports = mongoose.model('Producto',ProductoSchema);

@@ -1,4 +1,4 @@
-const Producto = require('../models/Producto')
+const Producto = require('../models/producto')
 
 exports.crearProductos = async (req, res) => {
     // console.log('creando producto desde el controlador')
@@ -42,15 +42,15 @@ exports.obtener_producto = async (req, res) => {
 }
 exports.actualizarProducto = async (req, res) => {
     try {
-        const{categoria,nombreProducto,marca,precio}=req.body;
+        const{marca,memoriainterna,memoriaram,precio}=req.body;
         let producto=await Producto.findById(req.params.id)
         if(!producto){
             res.status(404).json({mensaje:'no existe la informacion solicitada'})
     
         }
-        producto.categoria=categoria;
-        producto.nombreProducto=nombreProducto;
         producto.marca=marca;
+        producto.memoriainterna=memoriainterna;
+        producto.memoriaram=memoriaram;
         producto.precio=precio;
     
         let procesoActualizacion=await Producto.findOneAndUpdate({_id:req.params.id},producto,{new:true})
