@@ -1,1 +1,30 @@
-<p>computadores works!</p>
+<form [formGroup]="computadorForm" (ngSubmit)="agregarComputador()">
+        
+
+    <h1 class="bg-dark text-light mt-3">Registre su Computador</h1>
+    <div class="mb-3 ms-3 me-3 mt-3">
+        <label for="exampleFormControlInput1" class="form-label">Marca</label>
+        <input formControlName="marca" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese marca">
+        <span class="text-warning fw-bold" *ngIf="computadorForm.get('marca')?.hasError('pattern')">Marca invalida, solo ingrese letras</span>
+        <span *ngIf="computadorForm.get('marca')?.hasError('required') && computadorForm.get('marca')?.touched" class="text-danger ps-1 fw-bold">La marca es obligatoria</span>
+    </div>
+    <div class="mb-3 ms-3 me-3">
+        <label for="exampleFormControlInput1" class="form-label">Memoria RAM</label>
+        <input formControlName="memoriaram" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Solo numeros">
+        <span *ngIf="computadorForm.get('memoriaram')?.hasError('required') && computadorForm.get('memoriaram')?.touched" class="text-danger ps-1 fw-bold">Escriba la cantidad de memoria del producto</span>
+    </div>
+    <div class="mb-3 ms-3 me-3">
+        <label for="exampleFormControlInput1" class="form-label">Disco Sólido</label>
+        <input formControlName="discosolido" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Escribir si o no">
+        <span class="text-warning fw-bold" *ngIf="computadorForm.get('discosolido')?.hasError('pattern')">Solo escriba si o no</span>
+        <span *ngIf="computadorForm.get('discosolido')?.hasError('required') && computadorForm.get('discosolido')?.touched" class="text-danger ps-1 fw-bold">Especifique si tiene o no disco solido</span>
+    </div>
+    <div class="mb-3 ms-3 me-3">
+        <label for="exampleFormControlInput1" class="form-label">Precio del producto</label>
+        <input formControlName="precio" type="number" class="form-control" id="exampleFormControlInput1" placeholder="precio producto">
+        <span class="text-warning fw-bold" *ngIf="computadorForm.get('precio')?.hasError('pattern')">precio Invalido, numeros</span>
+        <span *ngIf="computadorForm.get('precio')?.hasError('required') && computadorForm.get('precio')?.touched" class="text-danger ps-1 fw-bold">El precio es obligatorio</span>
+
+    </div>
+    <button class="btn btn-success" type="submit" [disabled]="computadorForm.invalid">Guardar</button>
+</form>
