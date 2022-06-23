@@ -1,0 +1,31 @@
+<form [formGroup]="televisorForm" (ngSubmit)="agregarTelevisor()">
+        
+
+    <h1 class="bg-dark text-light mt-3">Registre su TV</h1>
+    <div class="mb-3 ms-3 me-3 mt-3">
+        <label for="exampleFormControlInput1" class="form-label">Marca</label>
+        <input formControlName="marca" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese marca">
+        <span class="text-warning fw-bold" *ngIf="televisorForm.get('marca')?.hasError('pattern')">Marca invalida, solo ingrese letras</span>
+        <span *ngIf="televisorForm.get('marca')?.hasError('required') && televisorForm.get('marca')?.touched" class="text-danger ps-1 fw-bold">La marca es obligatoria</span>
+    </div>
+    <div class="mb-3 ms-3 me-3">
+        <label for="exampleFormControlInput1" class="form-label">Tamaño pantalla</label>
+        <input formControlName="tamanopantalla" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Solo numeros">
+        <span class="text-warning fw-bold" *ngIf="televisorForm.get('tamanopantalla')?.hasError('pattern')">Ingrese solo numeros</span>
+        <span *ngIf="televisorForm.get('tamanopantalla')?.hasError('required') && televisorForm.get('tamanopantalla')?.touched" class="text-danger ps-1 fw-bold">Escriba la cantidad de memoria del producto</span>
+    </div>
+    <div class="mb-3 ms-3 me-3">
+        <label for="exampleFormControlInput1" class="form-label">Tipo de pantalla</label>
+        <input formControlName="tipopantalla" type="text" class="form-control" id="exampleFormControlInput1" placeholder="LED,LCD,PLASMA">
+        <span class="text-warning fw-bold" *ngIf="televisorForm.get('tipopantalla')?.hasError('pattern')">Invalido solo ingrese letras</span>
+        <span *ngIf="televisorForm.get('tipopantalla')?.hasError('required') && televisorForm.get('tipopantalla')?.touched" class="text-danger ps-1 fw-bold">Especifique el tipo de pantalla</span>
+    </div>
+    <div class="mb-3 ms-3 me-3">
+        <label for="exampleFormControlInput1" class="form-label">Precio</label>
+        <input formControlName="precio" type="number" class="form-control" id="exampleFormControlInput1" placeholder="Precio producto">
+        <span class="text-warning fw-bold" *ngIf="televisorForm.get('precio')?.hasError('pattern')">Precio Invalido, solo ingrese letras</span>
+        <span *ngIf="televisorForm.get('precio')?.hasError('required') && televisorForm.get('precio')?.touched" class="text-danger ps-1 fw-bold">El precio es obligatorio</span>
+
+    </div>
+    <button class="btn btn-success" type="submit" [disabled]="televisorForm.invalid">Guardar</button>
+</form>
