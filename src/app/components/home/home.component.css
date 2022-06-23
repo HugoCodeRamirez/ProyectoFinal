@@ -102,11 +102,7 @@
     opacity: 1;
 }
 .card{
-<<<<<<< HEAD
-    width:250px;
-=======
     width: 250px;
->>>>>>> master
     height: 350px;
     background: #000;
     border-radius: 30px;
