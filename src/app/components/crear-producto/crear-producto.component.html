@@ -12,19 +12,25 @@
             <option value="4">Televisores</option>
             <option value="5">Consolas</option>
         </select>
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Nombre Producto</label>
-            <input formControlName="producto" type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese nombre producto">
-            <span *ngIf="productoForm.get('producto')?.hasError('required') && productoForm.get('producto')?.touched" class="text-danger ps-1 fw-bold">El nombre del producto es obligatorio</span>
-        </div>
+        
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Marca</label>
-            <input formControlName="marca" type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese marca">
+            <input formControlName="marca" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese marca">
             <span *ngIf="productoForm.get('marca')?.hasError('required') && productoForm.get('marca')?.touched" class="text-danger ps-1 fw-bold">La marca es obligatoria</span>
         </div>
         <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Memoria Interna</label>
+            <input formControlName="memoria" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese nombre producto">
+            <span *ngIf="productoForm.get('memoria')?.hasError('required') && productoForm.get('memoria')?.touched" class="text-danger ps-1 fw-bold">El nombre del producto es obligatorio</span>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Memoria Ram</label>
+            <input formControlName="ram" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese nombre producto">
+            <span *ngIf="productoForm.get('ram')?.hasError('required') && productoForm.get('ram')?.touched" class="text-danger ps-1 fw-bold">El nombre del producto es obligatorio</span>
+        </div>
+        <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Precio</label>
-            <input formControlName="precio" type="email" class="form-control" id="exampleFormControlInput1" placeholder="Precio producto">
+            <input formControlName="precio" type="number" class="form-control" id="exampleFormControlInput1" placeholder="Precio producto">
             <span *ngIf="productoForm.get('precio')?.hasError('required') && productoForm.get('precio')?.touched" class="text-danger ps-1 fw-bold">El precio es obligatorio</span>
 
         </div>
