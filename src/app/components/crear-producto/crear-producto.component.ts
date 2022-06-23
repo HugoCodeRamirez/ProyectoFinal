@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 
+
 @Component({
   selector: 'app-crear-producto',
   templateUrl: './crear-producto.component.html',
@@ -20,9 +21,10 @@ export class CrearProductoComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {
     this.productoForm = this.fb.group({
-      producto: ['', [Validators.required]],
       marca: ['', [Validators.required]],
-      precio: ['', [Validators.required]],
+      memoria: ['', [Validators.required]],
+      ram: ['', [Validators.required]],
+      precio: ['', [Validators.required]]
     })
   }
 
